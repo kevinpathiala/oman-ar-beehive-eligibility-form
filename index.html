@@ -2097,9 +2097,9 @@ const fmtMoneyForCountry = (aedValue, data) => {
 // ===== STEP: Business age =====
 const StepAge = ({ data, set, next }) => (
   <>
-    <div className="eyebrow"><span className="eyebrow-dot" />عن أعمالك</div>
+    <div className="eyebrow"><span className="eyebrow-dot" />عن الشركة</div>
     <h1 className="q-title">منذ متى وأنت تمارس نشاطك التجاري؟</h1>
-    <p className="q-sub">اختر النطاق المناسب. سننتقل إلى التفاصيل لاحقاً.</p>
+    <p className="q-sub">حدّد مدة نشاط شركتك، وسنناقش بقية التفاصيل لاحقاً.</p>
     <OptionGroup
       autoAdvance
       onAutoAdvance={next}
@@ -2132,7 +2132,7 @@ const StepSectorIndustry = ({ data, set }) => {
     <>
       <div className="eyebrow"><span className="eyebrow-dot" />القطاع</div>
       <h1 className="q-title">ما نوع النشاط التجاري الذي تديره؟</h1>
-      <p className="q-sub">اختر القطاع أولاً، ثم اختر مجال عملك المحدد.</p>
+      <p className="q-sub">اختر القطاع أولاً، ثم حدّد المجال الذي يندرج ضمنه نشاطك.</p>
 
       <div className="options" style={{ marginBottom: 18 }}>
         {SECTORS.map((s) => (
@@ -2178,7 +2178,7 @@ const StepRevenue = ({ data, set }) => {
     <>
       <div className="eyebrow"><span className="eyebrow-dot" />حجم النشاط</div>
       <h1 className="q-title">ما متوسط إيراداتك السنوية؟</h1>
-      <p className="q-sub">يكفي رقم تقريبي. اسحب المؤشر إلى سنتك المعتادة.</p>
+      <p className="q-sub">لا يلزم أن يكون الرقم دقيقاً. حرّك المؤشر لتحديد متوسط إيراداتك السنوية.</p>
       <Slider
         min={0}
         max={maxAED}
@@ -2202,8 +2202,8 @@ const StepLoan = ({ data, set }) => {
   return (
     <>
       <div className="eyebrow"><span className="eyebrow-dot" />هدف التمويل</div>
-      <h1 className="q-title">كم تحتاج من التمويل؟</h1>
-      <p className="q-sub">{`تموّل بيهايف الأعمال المؤهلة حتى ${ccy.symbol} ${formatAED(capAED * fx)}.`}</p>
+      <h1 className="q-title">ما حجم التمويل الذي تحتاجه؟</h1>
+      <p className="q-sub">توفّر بيهايف تمويلاً للشركات المؤهلة يصل إلى 500 ألف ر.ع.</p>
       <Slider
         min={5_000}
         max={capAED}
@@ -2213,7 +2213,7 @@ const StepLoan = ({ data, set }) => {
         prefix={`${ccy.symbol} `}
         format={(v) => formatAED(v * fx)}
         formatBound={(v) => `${ccy.symbol} ${formatAED(v * fx)}`}
-        caption={`تتراوح معظم تمويلات بيهايف بين ${ccy.symbol} ${formatAED(20_000 * fx)} و ${ccy.symbol} ${formatAED(500_000 * fx)}`}
+        caption={`تتراوح احتياجات التمويل لدى معظم عملائنا بين 20 ألف و500 ألف ر.ع.`}
       />
     </>
   );
@@ -2493,8 +2493,8 @@ const App = () => {
         <div className="intro">
           <div className="intro-inner">
             <h1 className="intro-title">رحلة تمويلك تبدأ من هنا</h1>
-            <p className="intro-text">أجرِ فحصاً سريعاً خلال دقيقتين لاكتشاف ما يمكن أن يقدّمه التمويل لأعمالك.</p>
-            <button className="btn btn-primary intro-cta" onClick={() => setStarted(true)}>ابدأ<Ico.arrowLeft /></button>
+            <p className="intro-text">استكشف خلال دقيقتين حلول التمويل التي قد تدعم نمو شركتك.</p>
+            <button className="btn btn-primary intro-cta" onClick={() => setStarted(true)}>ابدأ الآن<Ico.arrowLeft /></button>
           </div>
         </div>
       )}
